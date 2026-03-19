@@ -1,0 +1,42 @@
+__pycache__/
+*.py[cod]
+*.so
+*.dll
+*.dylib
+*.log
+*.tmp
+.venv/
+venv/
+.env
+.env.*
+.idea/
+.vscode/
+
+# Dataset artifacts
+data/raw/
+!data/raw/.gitkeep
+data/processed/
+!data/processed/.gitkeep
+
+# Training outputs
+logs/
+!logs/.gitkeep
+!logs/checkpoints/.gitkeep
+!logs/tensorboard/.gitkeep
+!logs/wandb/.gitkeep
+runs/
+wandb/
+weights/
+checkpoints/
+
+# Ultralytics exports
+*.pt
+*.onnx
+*.engine
+*.ncnn
+*.mlmodel
+
+# Python packaging
+build/
+dist/
+*.egg-info/

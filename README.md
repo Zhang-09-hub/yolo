@@ -1,4 +1,15 @@
 ###################################################################
+
+## YOLOv8 training pipeline
+
+This repository now bundles scripts that convert CrackForest annotations into YOLO-ready splits, train/evaluate YOLOv8n, and organize experiment logs:
+
+- `scripts/prepare_data.py` – parse `.seg` files into YOLO bounding boxes and deterministic train/val/test splits under `data/processed/crackforest`.
+- `configs/data/crackforest.yaml` & `configs/train/yolov8n_crack.yaml` – dataset declaration plus default hyper-parameters for YOLOv8n.
+- `scripts/train.py`, `scripts/eval.py`, `scripts/infer.py` – thin wrappers over Ultralytics to standardize training, validation, inference, and artifact storage.
+- `logs/` – canonical home for TensorBoard summaries, checkpoints, and optional Weights & Biases caches.
+
+See [docs/USAGE.md](docs/USAGE.md) for step-by-step instructions covering environment setup, preprocessing, training, evaluation, inference, and log management.
 #                                                                 #
 #    CrackForest Dataset                                          #
 #    Limeng Cui (lmcui932-at-163.com)                             #

@@ -1,0 +1,7 @@
+ultralytics>=8.2.0
+opencv-python>=4.9.0
+numpy>=1.26.0
+PyYAML>=6.0
+tqdm>=4.66.0
+tensorboard>=2.16.0
+wandb>=0.16.0

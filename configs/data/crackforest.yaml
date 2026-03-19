@@ -1,0 +1,13 @@
+# Dataset configuration for CrackForest YOLOv8 training
+path: data/processed/crackforest
+train: images/train
+val: images/val
+test: images/test
+nc: 1
+names:
+  0: crack
+
+# Optional metadata to help downstream automation tools.
+description: |
+  Converted CrackForest dataset with train/val/test splits produced by scripts/prepare_data.py.
+  Images retain their original resolution (default 480x320) unless --imgsz is specified during preparation.
