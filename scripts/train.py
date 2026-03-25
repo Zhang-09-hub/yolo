@@ -99,7 +99,6 @@ def main() -> None:
     overrides["exist_ok"] = args.exist_ok or overrides.get("exist_ok", False)
     if args.run_name:
         overrides["name"] = args.run_name
-    overrides.setdefault("tensorboard", True)
     if args.resume:
         overrides["resume"] = args.resume
 
