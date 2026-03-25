@@ -137,7 +137,14 @@ def parse_segmentation(seg_file: Path) -> np.ndarray:
                 raise ValueError(
                     f"Malformed data line '{line}' in segmentation file {seg_file}"
                 )
-            row, col_start, label, col_end = map(int, parts)
+            a, b, c, d = map(int, parts)
+            # CrackForest commonly stores runs as: label row col_start col_end.
+            # Keep backward compatibility with alternative exports that may use:
+            # row col_start label col_end.
+            if a in (0, 1) and 0 <= b < (height or 0):
+                label, row, col_start, col_end = a, b, c, d
+            else:
+                row, col_start, label, col_end = a, b, c, d
             runs.append((row, col_start, label, col_end))
 
     if width is None or height is None:
